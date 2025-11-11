@@ -19,7 +19,7 @@ import { Spinner } from "@repo/ui/src/components/spinner";
 const formSchema = z.object({
     name: z
       .string()
-      .min(5, "Name of the project must be at least 5 characters.")
+      .min(3, "Name of the project must be at least 5 characters.")
       .max(32, "The name of the project must be at most 32 characters."),
     type: z.enum(["SUPABASE", "VERCEL"]),
   })
@@ -28,15 +28,14 @@ export function AddProjectDialog({repositoryId,}: {repositoryId: string,}) {
 
     const form = useForm({
         defaultValues: {
-            name: "My project",
-            type: "SUPABASE",
+            name: "",
+            type: "",
         },
         validators: {
             onSubmit: formSchema,
             onBlur: formSchema,
         },
         onSubmit: async ({ value }) => {
-            console.log(`SUBMITTINGGGGG`,value);
             const formData = new FormData();
             formData.append('name', value.name);
             formData.append('type', value.type);
