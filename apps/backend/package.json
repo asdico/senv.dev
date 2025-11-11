@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/backend",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./supabase/types": "./types.ts",
+    "./supabase/utils": "./utils.ts"
+  },
+  "scripts": {
+    "dev": "npx supabase start && npx supabase functions serve"
+  },
+  "devDependencies": {
+    "@repo/prettier-config": "workspace:*"
+  }
+}
