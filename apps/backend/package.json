@@ -8,8 +8,5 @@
   },
   "scripts": {
     "dev": "npx supabase start && npx supabase functions serve"
-  },
-  "devDependencies": {
-    "@repo/prettier-config": "workspace:*"
   }
 }
